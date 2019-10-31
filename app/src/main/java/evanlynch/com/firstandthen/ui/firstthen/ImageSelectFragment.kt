@@ -1,14 +1,14 @@
 package evanlynch.com.firstandthen.ui.firstthen
 
 import android.app.AlertDialog
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.graphics.Bitmap
 import android.media.MediaScannerConnection
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +25,7 @@ import java.io.IOException
 import java.util.*
 
 
-class ImageSelectFragment : Fragment() {
+class ImageSelectFragment : androidx.fragment.app.Fragment() {
 
     companion object {
         fun newInstance() = ImageSelectFragment()
@@ -63,14 +63,14 @@ class ImageSelectFragment : Fragment() {
         pictureDialog.show()
     }
     private fun takePhotoFromCamera() {
-        val intent = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(intent, CAMERA)
     }
 
     private fun choosePhotoFromGallary() {
         val galleryIntent = Intent(
             Intent.ACTION_PICK,
-            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         )
 
         startActivityForResult(galleryIntent, GALLERY)
@@ -82,7 +82,7 @@ class ImageSelectFragment : Fragment() {
         // TODO: Use the ViewModel
     }
 
-    public override fun onActivityResult(requestCode:Int, resultCode:Int, data: Intent?) {
+    override fun onActivityResult(requestCode:Int, resultCode:Int, data: Intent?) {
 
         super.onActivityResult(requestCode, resultCode, data)
         /* if (resultCode == this.RESULT_CANCELED)
@@ -150,17 +150,17 @@ class ImageSelectFragment : Fragment() {
         {
             Log.d("heel",imgDirectory.toString())
             val f = File(imgDirectory, ((Calendar.getInstance()
-                .getTimeInMillis()).toString() + ".jpg"))
+                .timeInMillis).toString() + ".jpg"))
             f.createNewFile()
             val fo = FileOutputStream(f)
             fo.write(bytes.toByteArray())
             MediaScannerConnection.scanFile(this.context,
-                arrayOf(f.getPath()),
+                arrayOf(f.path),
                 arrayOf("image/jpeg"), null)
             fo.close()
-            Log.d("TAG", "File Saved::--->" + f.getAbsolutePath())
+            Log.d("TAG", "File Saved::--->" + f.absolutePath)
 
-            return f.getAbsolutePath()
+            return f.absolutePath
         }
         catch (e1: IOException) {
             e1.printStackTrace()

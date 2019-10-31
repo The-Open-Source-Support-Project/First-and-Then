@@ -5,10 +5,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
@@ -19,8 +19,8 @@ import evanlynch.com.firstandthen.ui.firstthen.ImageSelectFragment
 class FirstThenActivity : AppCompatActivity() {
 
     private var TAG = "FirstThenActivity"
-    public var width: Int = 0
-    public var height: Int = 0
+    var width: Int = 0
+    var height: Int = 0
     private val RECORD_REQUEST_CODE = 101
 
 

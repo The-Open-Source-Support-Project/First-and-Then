@@ -2,7 +2,7 @@ package evanlynch.com.firstandthen.ui.firstthen
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -12,8 +12,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.support.design.widget.FloatingActionButton
-import android.support.v4.app.Fragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +27,7 @@ import java.io.*
 import java.util.*
 
 
-class FirstThenFragment : Fragment() {
+class FirstThenFragment : androidx.fragment.app.Fragment() {
 
     companion object {
         fun newInstance() = FirstThenFragment()
@@ -39,7 +39,7 @@ class FirstThenFragment : Fragment() {
     private val IMAGE_DIRECTORY = "/demonuts"
     private val GALLERY = 1
     private val CAMERA = 2
-    public var SCREEN_LOCK = false
+    var SCREEN_LOCK = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -148,7 +148,7 @@ class FirstThenFragment : Fragment() {
             val matrix = Matrix()
 
             matrix.postRotate(90F)
-            val rotatedBitmap = Bitmap.createBitmap(thumbnail, 0, 0, thumbnail.getWidth(), thumbnail.getHeight(), matrix, true);
+            val rotatedBitmap = Bitmap.createBitmap(thumbnail, 0, 0, thumbnail.width, thumbnail.height, matrix, true)
 
             imageView.setImageBitmap(thumbnail)
             saveImage(thumbnail)
@@ -172,17 +172,17 @@ class FirstThenFragment : Fragment() {
         {
             Log.d("heel",imgDirectory.toString())
             val f = File(imgDirectory, ((Calendar.getInstance()
-                .getTimeInMillis()).toString() + ".jpg"))
+                .timeInMillis).toString() + ".jpg"))
             f.createNewFile()
             val fo = FileOutputStream(f)
             fo.write(bytes.toByteArray())
             MediaScannerConnection.scanFile(this.context,
-                arrayOf(f.getPath()),
+                arrayOf(f.path),
                 arrayOf("image/jpeg"), null)
             fo.close()
-            Log.d("TAG", "File Saved::--->" + f.getAbsolutePath())
+            Log.d("TAG", "File Saved::--->" + f.absolutePath)
 
-            return f.getAbsolutePath()
+            return f.absolutePath
         }
         catch (e1: IOException) {
             e1.printStackTrace()
