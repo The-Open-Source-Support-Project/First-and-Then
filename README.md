@@ -18,18 +18,21 @@ samples, guidance on mobile development, and a full API reference.
 for app signing delete the .jks file and make a new one with the following at the command line:
 
 On Mac/Linux, use the following command:
+
 ```keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key```
+
 On Windows, use the following command:
+
 ```keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key```
 
-then Create a file named <app dir>/android/key.properties that contains a reference to your keystore:
-
-```storePassword=<password from previous step>
-   keyPassword=<password from previous step>
-   keyAlias=key
-   storeFile=<location of the key store file, such as /Users/<user name>/key.jks>```
+then Create a file named ```<app dir>```/android/key.properties that contains a reference to your keystore:
+<code>storePassword=`<password from previous step>`
+<br>keyPassword=`<password from previous step>`
+<br>keyAlias=key
+<br>storeFile=`<location of the key store file, such as /Users/<user name>`/key.jks></code>
 
 then run this comand in your terminal from the app project directory
+
 ```flutter -v build appbundle --build-number <buildNumber>```
 
-Join the Discord https://discord.gg/ZqnP6c
+Discord: [https://discord.gg/ZqnP6c](https://discord.gg/ZqnP6c)
