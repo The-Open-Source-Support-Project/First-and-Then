@@ -28,3 +28,8 @@ then Create a file named <app dir>/android/key.properties that contains a refere
    keyPassword=<password from previous step>
    keyAlias=key
    storeFile=<location of the key store file, such as /Users/<user name>/key.jks>```
+
+then run this comand in your terminal from the app project directory
+```flutter -v build appbundle --build-number <buildNumber>```
+
+Join the Discord https://discord.gg/ZqnP6c
