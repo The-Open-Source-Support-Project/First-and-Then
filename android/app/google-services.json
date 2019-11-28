@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "111034004014",
+    "firebase_url": "https://first-and-then-58ad2.firebaseio.com",
+    "project_id": "first-and-then-58ad2",
+    "storage_bucket": "first-and-then-58ad2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111034004014:android:3eeda9eb0e7dc94c7f65bf",
+        "android_client_info": {
+          "package_name": "evanlynch.com.firstandthen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111034004014-knkd38ueknqilm6iblr7vokq8q4ggatv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "evanlynch.com.firstandthen",
+            "certificate_hash": "528a48d9becf0197f50b50ae6bc592d7828ebba7"
+          }
+        },
+        {
+          "client_id": "111034004014-2fl5923f4onpudbq5pksnn0nh1p45u48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNy1VwRM-iVIkBzNOQuY8GwX1PAeq2ZzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111034004014-2fl5923f4onpudbq5pksnn0nh1p45u48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
