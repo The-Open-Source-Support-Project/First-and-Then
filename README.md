@@ -1,6 +1,13 @@
 # first_then
 
-A new Flutter project.
+A simple easy to use First And Then board you can use well your out so you don't need to carry your board and all your visuals with you.
+
+# License
+
+all Software in the OSSP must fallow the basic MIT license + the fallow basic Rules
+
+1. Applications must remain Free for individual/personal use.
+2. Applications must remain ad free.
 
 ## Getting Started
 
